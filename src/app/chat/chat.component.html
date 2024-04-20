@@ -1,7 +1,12 @@
-{{messages|json}}
+<!-- {{messages|json}} -->
 
     <input [(ngModel)]="newMessage" type="text" class="form-control" id="floatingInputValue" placeholder="message">
-    <label for="floatingInputValue">Message:</label>
+    
     <button (click)="pushMessage()" type="button" class="btn btn-primary">Send</button>
 
-
+<div *ngFor="let message of messages" class="d-flex flex-row">
+    <div class="col-4" [ngClass]="{'en': user==message.user}">
+        <div class="user">{{message.user}} - {{message.time}}</div>
+        <div class="message">{{message.text}}</div>
+    </div>
+</div>

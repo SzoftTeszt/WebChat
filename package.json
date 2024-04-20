@@ -1,8 +1,10 @@
 {
   "name": "class-chat",
   "version": "0.0.0",
+  "main":"main.js",
   "scripts": {
     "ng": "ng",
+    "electron":"ng build && electron .",
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
@@ -32,6 +34,7 @@
     "@angular/compiler-cli": "^16.2.0",
     "@angular/localize": "^16.2.0",
     "@types/jasmine": "~4.3.0",
+    "electron": "^30.0.1",
     "jasmine-core": "~4.6.0",
     "karma": "~6.4.0",
     "karma-chrome-launcher": "~3.2.0",

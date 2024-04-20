@@ -11,6 +11,7 @@ export class ChatComponent {
 
   messages:any
   newMessage:any
+  user="Attila"
   constructor(private base:BaseService){
     this.base.getMessages().snapshotChanges().pipe(
       map( (ch)=> ch.map(
@@ -22,10 +23,15 @@ export class ChatComponent {
   }
 
   pushMessage(){
+    const d = new Date();
+    let time = d.toLocaleTimeString();
+    let date = d.toLocaleDateString();
     let body:any={
-      user:"Attila",
+      user:this.user,
+      time:date+" "+time,
       text:this.newMessage
     }
+
     this.base.pushMessage(body).then(
       ()=>this.newMessage=""
     ).catch(
