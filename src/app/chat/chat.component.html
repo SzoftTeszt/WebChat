@@ -1,1 +1,7 @@
-<p>chat works!</p>
+{{messages|json}}
+
+    <input [(ngModel)]="newMessage" type="text" class="form-control" id="floatingInputValue" placeholder="message">
+    <label for="floatingInputValue">Message:</label>
+    <button (click)="pushMessage()" type="button" class="btn btn-primary">Send</button>
+
+
